@@ -25,14 +25,33 @@ import json
 with open("test.json", "r") as file:
     accounts = json.load(file)
 
-# def money_withdraw(money):
+def money_withdraw(id, amount):
+    for i in accounts['accounts']:
+        for a in range(len(accounts[i])):
+            for b in accounts[i]:
+                identefication = a + 1
 
-for i in accounts['accounts']:
-    print(i['id'])
-# print("Меню")
-# print("1 --- Створити новий рахунок")
-# print("2 --- Зняти кошти з рахунку")
-# print("3 --- Поповнити рахунок")
-# print("4 --- Перевести кошти з одного рахунку на інший")
-# print("5 --- Перевірити баланс рахунку")
-# print("6 --- Вийти з програми")
+            if id == identefication and amount <= b['balance']:
+                print
+    
+def new_account(name):
+    
+    accounts['accounts'].dump
+
+while True:
+    print("Меню")
+    print("1 --- Створити новий рахунок")
+    print("2 --- Зняти кошти з рахунку")
+    print("3 --- Поповнити рахунок")
+    print("4 --- Перевести кошти з одного рахунку на інший")
+    print("5 --- Перевірити баланс рахунку")
+    print("6 --- Вийти з програми")
+
+    choice = int(input("Виберіть пункт з меню: "))
+
+    if choice == 1:
+        print
+    elif choice == 6:
+        break
+    else:
+        print("Такої функції немає! Повторіть спробу!")
